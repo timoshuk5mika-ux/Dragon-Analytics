@@ -298,6 +298,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
 }
 
 .main-aliance-icon {
@@ -351,6 +353,7 @@
   display: flex;
   justify-content: space-between;
   gap: 8px;
+  padding-top: 20px;
 }
 
 .main-aliance-stat {

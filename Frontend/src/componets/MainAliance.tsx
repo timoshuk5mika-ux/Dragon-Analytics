@@ -1,6 +1,7 @@
 import './css/Main.css';
 import { ALLIANCES } from '../data/alliance-reting';
 import { Shield } from 'lucide-react';
+import { motion as Motion } from 'framer-motion';
 
 function Main() {
     return (
@@ -9,9 +10,16 @@ function Main() {
                 <p className='main-subtitle'>Coalitions</p>
                 <h1 className='main-title'>РЕЙТИНГ АЛЬЯНСОВ</h1>
             </div>
-            <div className='main-aliance-grid'>
+            <div className='main-aliance-grid'>     
                 {ALLIANCES.map((alliance, index) => (
-                    <div className='main-card main-card-dark main-aliance-card' key={alliance.tag}>
+                    <Motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        key={alliance.tag}
+                        className='main-card main-card-dark main-aliance-card'
+                    >
+                    <div key={alliance.tag}>
                         <div className='main-aliance-top'>
                             <div className='main-aliance-icon'>
                                 <span className='main-aliance-icon-svg'><Shield /></span>
@@ -49,6 +57,7 @@ function Main() {
                             </div>
                         </div>
                     </div>
+                    </Motion.div>
                 ))}
             </div>
         </main>
