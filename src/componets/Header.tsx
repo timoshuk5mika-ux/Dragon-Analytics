@@ -19,8 +19,8 @@ function Header() {
           <NavLink to="/payment" className={({ isActive }) => isActive ? 'header-nav-active' : 'header-nav-link'}>ПОДПИСКИ</NavLink>
         </nav>
         <div className="header-actions">
-          <button className="header-login-btn">ВОЙТИ</button>
-          <button className="header-register-btn">РЕГИСТРАЦИЯ</button>
+          <NavLink to="/login" className="header-login-btn">ВОЙТИ</NavLink>
+          <NavLink to="/register" className="header-register-btn">РЕГИСТРАЦИЯ</NavLink>
         </div>
       </div>
     </header>
