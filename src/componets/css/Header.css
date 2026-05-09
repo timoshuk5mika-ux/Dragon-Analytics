@@ -78,6 +78,7 @@
     transition: border-color 0.2s;
     font-family: sans-serif;
     font-size: 15px; 
+    text-decoration: none;
 }
 
 .header-login-btn:hover { 
@@ -95,6 +96,7 @@
     transition: background 0.2s; 
     font-family: sans-serif;
     font-size: 15px;
+    text-decoration: none;
 }
 
 .header-register-btn:hover { 
