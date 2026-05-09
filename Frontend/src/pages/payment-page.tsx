@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 // импорт таблицы планов подписки из папки компоненты, для типизации
-import { type Plan } from '../componets/Plan';
+import { type Plan } from '../data/Plan';
 
 // импорт компонентов страницы оплаты
 

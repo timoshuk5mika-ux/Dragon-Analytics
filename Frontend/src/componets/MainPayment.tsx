@@ -1,4 +1,4 @@
-import { plans, type Plan } from './Plan';
+import { plans, type Plan } from '../data/Plan';
 import { Star, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import './css/Main.css';

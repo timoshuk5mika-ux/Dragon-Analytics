@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { type Plan } from './Plan';
+import { type Plan } from '../data/Plan';
 import { X } from 'lucide-react';
 import './css/Payment.css';
 
