@@ -21,6 +21,15 @@ Backend/
 
 ## Local Setup
 
+Using `uv` from the project root:
+
+```bash
+uv sync --python 3.10 --dev
+uv run uvicorn --app-dir Backend app.main:app --reload
+```
+
+Or using a virtual environment inside `Backend`:
+
 ```bash
 cd Backend
 python3 -m venv .venv
@@ -35,7 +44,7 @@ PostgreSQL should be installed and running locally. Create the database and user
 Create tables:
 
 ```bash
-python -m app.db.init_db
+uv run --directory Backend python -m app.db.init_db
 ```
 
 Health check:
