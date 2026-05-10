@@ -9,7 +9,12 @@ function Main () {
             <h1 className='main-title'>ГЛОБАЛЬНЫЙ РЕЙТИНГ</h1>
         </div>
         <div className='main-table'>
-                <table className='main-table-wrapper'>
+            <Motion.table
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className='main-table-wrapper'
+            >
                     <thead className='main-table-head'>
                         <tr>
                             <th>Ранг</th>
@@ -25,7 +30,7 @@ function Main () {
                         <Motion.tr
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: player.rank * 0.1 }}
+                            transition={{ duration: 0.3, delay: 0.2 + player.rank * 0.07 }}
                             key={player.player_id}
                             className='main-table-row'
                         >
@@ -43,7 +48,7 @@ function Main () {
                         </Motion.tr>
                     ))}
                 </tbody>
-            </table>
+            </Motion.table>
         </div>
     </main>)
 }
