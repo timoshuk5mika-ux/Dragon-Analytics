@@ -292,7 +292,14 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
+
+.main-aliance-card:hover {
+  border-color: #facc15;
+  transform: translateY(-4px) !important;
+}
+
 
 .main-aliance-top {
   display: flex;
