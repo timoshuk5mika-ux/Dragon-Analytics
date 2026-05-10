@@ -36,7 +36,7 @@ function Main() {
                         <div className='main-aliance-info'>
                             <div className='main-aliance-stat'>
                                 <span className='name-stat'>СИЛА</span>
-                                <span className='info-stat info-stat-gold'>
+                                <span className='info-stat info-stat-yellow'>
                                     {(alliance.power / 1_000_000_000).toFixed(2)}В
                                 </span>
                             </div>
@@ -47,8 +47,9 @@ function Main() {
                             <div className='main-aliance-stat'>
                                 <span className='name-stat'>В/П</span>
                                 <span className='info-stat'>
-                                    <span className='info-stat-gold'>{alliance.wars_won}</span>
-                                    <span className='info-stat-red'>/{alliance.wars_lost}</span>
+                                    <span className='info-stat-green'>{alliance.wars_won}</span>
+                                    <span> / </span>
+                                    <span className='info-stat-red'>{alliance.wars_lost}</span>
                                 </span>
                             </div>
                             <div className='main-aliance-stat'>

@@ -297,9 +297,8 @@
 
 .main-aliance-card:hover {
   border: 1px solid #facc15;
-  transform: translateY(-4px);
+  transform: translateY(-4px) !important;
 }
-
 
 .main-aliance-top {
   display: flex;
@@ -325,14 +324,14 @@
 }
 
 .main-aliance-tag {
-  font-size: 16px;
+  font-size: 23px;
   font-weight: 700;
   color: #fff;
   margin: 0;
 }
 
 .main-aliance-name {
-  font-size: 12px;
+  font-size: 15px;
   color: #888;
   margin: 0;
 }
@@ -344,14 +343,14 @@
 }
 
 .main-aliance-rank-label {
-  font-size: 10px;
+  font-size: 14px;
   color: #888;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .main-aliance-rank-value {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 700;
   color: #eab308;
 }
@@ -360,7 +359,7 @@
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  padding-top: 20px;
+  padding-top: 20px;;
 }
 
 .main-aliance-stat {
@@ -370,19 +369,23 @@
 }
 
 .name-stat {
-  font-size: 10px;
+  font-size: 14px;
   color: #888;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .info-stat {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #fff;
 }
 
-.info-stat-gold {
+.info-stat-green {
+  color: #70d67c;
+}
+
+.info-stat-yellow {
   color: #eab308;
 }
 
