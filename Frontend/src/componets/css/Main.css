@@ -384,20 +384,52 @@
 }
 
 .main-table {
-  display: block
-
+  display: block;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
 }
 
 .main-table-wrapper {
   width: 100%;
+  border-collapse: collapse;
 }
 
 .main-table-head th {
   text-align: left;
   padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .main-table-body td {
   padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.main-table-body tr {
+  transition: background 0.2s ease;
+}
+
+.main-table-body tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.first, .second, .third, .main-table-player-alliance{
+  color: #eab308;
+}
+
+.main-table-player-kills {
+  color: #db5700;
+}
+
+.main-table-player-deaths {
+  color: #cd3a3a;
+}
+
+.main-table-player-name {
+  font-weight: 700;
+}
+
+.main-table-body tr:last-child td {
+  border-bottom: none;
+}
