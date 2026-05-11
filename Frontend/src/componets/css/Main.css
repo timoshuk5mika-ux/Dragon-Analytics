@@ -115,7 +115,7 @@
 }
 
 .main-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) !important;
 }
 
 .main-card-dark {
@@ -442,4 +442,40 @@
 
 .main-table-body tr:last-child td {
   border-bottom: none;
+}
+
+.main-filters {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+}
+
+.mein-heading-heroes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-filter-select {
+    background: #09090b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 8px 24px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.main-filter-select:hover {
+    border-color: #facc15;
+}
+
+.main-hero-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s;
+}
+
+.main-hero-card:hover {
+    border-color: #facc15;
 }
