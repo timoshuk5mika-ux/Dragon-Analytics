@@ -24,30 +24,24 @@ function Main() {
                     <h1 className='main-title'>КАТАЛОГ ГЕРОЕВ</h1>
                 </div>
                 <div className='main-filters'>
-                    <motion.select
+                    <select
                         className='main-filter-select'
                         value={faction}
                         onChange={e => setFaction(e.target.value)}
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3, duration: 0.6 }}
                     >
                         {factions.map(f => (
                             <option key={f} value={f}>ФРАКЦИЯ: {f.toUpperCase()}</option>
                         ))}
-                    </motion.select>
-                    <motion.select
+                    </select>
+                    <select
                         className='main-filter-select'
                         value={rarity}
                         onChange={e => setRarity(e.target.value)}
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5, duration: 0.6 }}
                     >
                         {rarities.map(r => (
                             <option key={r} value={r}>РЕДКОСТЬ: {r.toUpperCase()}</option>
                         ))}
-                    </motion.select>
+                    </select>
                 </div>
             </div>
             <div className='main-grid'>

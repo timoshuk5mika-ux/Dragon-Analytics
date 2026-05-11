@@ -464,7 +464,6 @@
     color: #ffffff;
     font-size: 14px;
     cursor: pointer;
-    transition: all 0.2s;
 }
 
 .main-filter-select:hover {
@@ -474,7 +473,6 @@
 .main-hero-card {
     padding: 0;
     overflow: hidden;
-    transition: all 0.2s;
 }
 
 .main-card-info {
