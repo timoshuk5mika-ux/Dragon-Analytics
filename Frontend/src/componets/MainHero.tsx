@@ -51,18 +51,27 @@ function Main() {
                 </div>
             </div>
             <div className='main-grid'>
-                    {filtered.map((hero, index) => (
-                        <motion.div
-                            key={hero.hero_id}
-                            className='main-card main-card-dark main-hero-card'
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                        >
-                        <img src={hero.image} alt={hero.name} className='main-card-image' />
-                        <div className='main-card-content'>
-                            <h2 className='main-card-title'>{hero.name}</h2>
-                            <p className='main-card-description'>{hero.description_en}</p>
+                {filtered.map((hero, index) => (
+                    <motion.div
+                        key={hero.hero_id}
+                        className='main-card main-card-dark main-hero-card'
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                    >
+                        <div className='main-hero-image-wrap'>
+                            <img src={hero.image} alt={hero.name} className='main-card-image' />
+                            <span className={`main-hero-rarity main-hero-rarity-${hero.rarity.toLowerCase()}`}>
+                                {hero.rarity}
+                            </span>
+                        </div>
+                        <div className='main-card-info'>
+                            <div className='main-hero-header'>
+                                <h3 className='main-card-name'>{hero.name}</h3>
+                                <span className='main-hero-power'>{(hero.power / 1000).toFixed(1)}K</span>
+                            </div>
+                            <p className='main-hero-meta'>{hero.faction} · {hero.role}</p>
+                            <p className='main-card-description'>{hero.description_ru}</p>
                         </div>
                     </motion.div>
                 ))}
