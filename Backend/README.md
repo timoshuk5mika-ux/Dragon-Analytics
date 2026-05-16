@@ -21,6 +21,24 @@ Backend/
 
 ## Local Setup
 
+Using Docker from the project root:
+
+```bash
+docker compose up --build
+```
+
+Deploy docs:
+
+```text
+../DEPLOY.md
+```
+
+Backend:
+
+```text
+http://127.0.0.1:8000
+```
+
 Using `uv` from the project root:
 
 ```bash
@@ -84,6 +102,21 @@ Fake payment endpoints:
 POST http://127.0.0.1:8000/api/v1/fake-payment
 POST http://127.0.0.1:8000/api/v1/subscriptions
 GET http://127.0.0.1:8000/api/v1/me/subscriptions
+```
+
+## Testing
+
+```bash
+uv run pytest Backend/tests
+```
+
+Current coverage checks:
+
+```text
+auth: register, duplicate register, login, form login, JWT /me
+plans: /plans and /api/v1/plans response schema
+services: /services and /api/v1/services response schema
+database: users, services, subscriptions persistence
 ```
 
 API docs:

@@ -1,9 +1,17 @@
 
+import { useEffect, useState } from 'react';
 import './css/Main.css';
+import { fallbackServices, fetchServices, type Service } from '../api/catalog';
 
 
 
 function Main () {
+    const [services, setServices] = useState<Service[]>(fallbackServices);
+
+    useEffect(() => {
+        fetchServices().then(setServices);
+    }, []);
+
     return (<main className='main'>
         <div className='mein-heading'>
             <p className='main-subtitle'>Welcome to</p>
@@ -66,27 +74,22 @@ function Main () {
         
             <section id="features" style={{padding: '80px 0', background: '#000'}}>
                 <div style={{maxWidth: '1280px', margin: '0 auto', padding: '0 32px'}}>
+                    <div className="main-heading">
+                        <p className="main-subtitle">SERVICES</p>
+                        <h2 className="main-title">УСЛУГИ ИЗ BACKEND</h2>
+                        <p className="main-description main-desc-dark">
+                            Эти карточки загружаются через fetch из FastAPI endpoint <span className="main-inline-code">/services</span>.
+                        </p>
+                    </div>
                     <div className="main-grid">
-                        <div className="main-card main-card-dark">
-                            <div style={{width: '48px', height: '48px', background: '#eab308', color: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', marginBottom: '24px', borderRadius: '14px'}}>⚔️</div>
-                            <h3 className="main-plan-name" style={{fontSize: '15px', letterSpacing: '1px', marginBottom: '12px'}}>СТАТИСТИКА ГЕРОЕВ</h3>
-                            <p className="main-card-description">База всех легендарных, эпических и редких героев с характеристиками и описанием.</p>
-                        </div>
-                        <div className="main-card main-card-dark">
-                            <div style={{width: '48px', height: '48px', background: '#eab308', color: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', marginBottom: '24px', borderRadius: '14px'}}>🛡</div>
-                            <h3 className="main-plan-name" style={{fontSize: '15px', letterSpacing: '1px', marginBottom: '12px'}}>АЛЬЯНСЫ И ВОЙНЫ</h3>
-                            <p className="main-card-description">Анализируй силу альянсов, итоги войн и династии королевств.</p>
-                        </div>
-                        <div className="main-card main-card-dark">
-                            <div style={{width: '48px', height: '48px', background: '#eab308', color: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', marginBottom: '24px', borderRadius: '14px'}}>👑</div>
-                            <h3 className="main-plan-name" style={{fontSize: '15px', letterSpacing: '1px', marginBottom: '12px'}}>ГЛОБАЛЬНЫЙ РЕЙТИНГ</h3>
-                            <p className="main-card-description">Топ-командиры по силе, убийствам и K/D коэффициенту.</p>
-                        </div>
-                        <div className="main-card main-card-dark">
-                            <div style={{width: '48px', height: '48px', background: '#eab308', color: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', marginBottom: '24px', borderRadius: '14px'}}>📈</div>
-                            <h3 className="main-plan-name" style={{fontSize: '15px', letterSpacing: '1px', marginBottom: '12px'}}>ПЕРСОНАЛЬНЫЙ ТРЕКЕР</h3>
-                            <p className="main-card-description">Твоя сила, прогресс и графики за 7 дней. Цель перед тобой.</p>
-                        </div>
+                        {services.map((service) => (
+                            <div className="main-card main-card-dark" key={service.id}>
+                                <div className="main-service-icon">{service.title.slice(0, 1)}</div>
+                                <h3 className="main-plan-name" style={{fontSize: '15px', letterSpacing: '1px', marginBottom: '12px'}}>{service.title}</h3>
+                                <p className="main-card-description">{service.description}</p>
+                                <div className="main-service-price">${service.price.toFixed(2)}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
