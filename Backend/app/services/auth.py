@@ -9,7 +9,7 @@ from app.schemas.user import UserCreate
 def create_user(db: Session, payload: UserCreate) -> User:
     user = User(
         email=payload.email,
-        hashed_password=hash_password(payload.password),
+        password_hash=hash_password(payload.password),
     )
     db.add(user)
     db.commit()
@@ -21,7 +21,7 @@ def authenticate_user(db: Session, email: str, password: str) -> User | None:
     user = db.query(User).filter(User.email == email).first()
     if user is None:
         return None
-    if not verify_password(password, user.hashed_password):
+    if not verify_password(password, user.password_hash):
         return None
     return user
 

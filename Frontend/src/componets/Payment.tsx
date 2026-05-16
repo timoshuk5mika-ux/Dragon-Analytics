@@ -6,16 +6,13 @@ import './css/Payment.css';
 type PaymentProps = {
   selectedPlan: Plan | null;
   isYearly: boolean;
+  isProcessing: boolean;
+  errorMessage: string;
   onClose: () => void;
-  onSuccess: () => void;
+  onPay: () => void;
 };
 
-function Payment({ selectedPlan, isYearly, onClose, onSuccess }: PaymentProps) {
-  const handlePayment = () => {
-    onClose();
-    onSuccess();
-  };
-
+function Payment({ selectedPlan, isYearly, isProcessing, errorMessage, onClose, onPay }: PaymentProps) {
   return (
     <AnimatePresence>
       {selectedPlan && (
@@ -42,8 +39,9 @@ function Payment({ selectedPlan, isYearly, onClose, onSuccess }: PaymentProps) {
                 <input className="payment-input" type="text" placeholder="CVC" />
               </div>
             </div>
-            <button onClick={handlePayment} className="payment-btn">
-              ОПЛАТИТЬ СЕЙЧАС
+            {errorMessage && <p className="payment-error">{errorMessage}</p>}
+            <button onClick={onPay} className="payment-btn" disabled={isProcessing}>
+              {isProcessing ? 'АКТИВАЦИЯ...' : 'ОПЛАТИТЬ СЕЙЧАС'}
             </button>
           </motion.div>
         </div>

@@ -11,7 +11,7 @@ from app.models.user import User
 from app.schemas.auth import TokenPayload
 
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl=f"{settings.api_v1_prefix}/auth/login")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
 
 
 def get_db() -> Generator[Session, None, None]:

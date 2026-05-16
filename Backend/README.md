@@ -53,6 +53,39 @@ Health check:
 GET http://127.0.0.1:8000/api/v1/health/
 ```
 
+Catalog endpoints:
+
+```text
+GET http://127.0.0.1:8000/plans
+GET http://127.0.0.1:8000/services
+GET http://127.0.0.1:8000/api/v1/plans
+GET http://127.0.0.1:8000/api/v1/services
+```
+
+Auth endpoints:
+
+```text
+POST http://127.0.0.1:8000/register
+POST http://127.0.0.1:8000/login
+GET http://127.0.0.1:8000/me
+```
+
+Database tables:
+
+```text
+users: id, email, password_hash
+subscriptions: id, user_id, plan, status, expires_at
+services: id, title, description, price
+```
+
+Fake payment endpoints:
+
+```text
+POST http://127.0.0.1:8000/api/v1/fake-payment
+POST http://127.0.0.1:8000/api/v1/subscriptions
+GET http://127.0.0.1:8000/api/v1/me/subscriptions
+```
+
 API docs:
 
 ```text

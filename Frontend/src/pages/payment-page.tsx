@@ -1,8 +1,10 @@
 // библиотека реакт
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // импорт таблицы планов подписки из папки компоненты, для типизации
-import { type Plan } from '../data/Plan';
+import { plans as fallbackPlans, type Plan } from '../data/Plan';
+import { fetchPlans } from '../api/catalog';
+import { fakePay } from '../api/subscriptions';
 
 // импорт компонентов страницы оплаты
 
@@ -25,8 +27,35 @@ function Paymentpage() {
   const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
   const [showSuccess, setShowSuccess] = useState(false);
   const [isYearly, setIsYearly] = useState(false);
+  const [plans, setPlans] = useState<Plan[]>(fallbackPlans);
+  const [paymentError, setPaymentError] = useState('');
+  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+
+  useEffect(() => {
+    fetchPlans().then(setPlans);
+  }, []);
 
   const handleUpgrade = (plan: Plan) => setSelectedPlan(plan);
+
+  const handlePayment = async () => {
+    if (!selectedPlan) {
+      return;
+    }
+
+    setIsProcessingPayment(true);
+    setPaymentError('');
+
+    try {
+      await fakePay(selectedPlan.id, isYearly ? 'yearly' : 'monthly');
+      setSelectedPlan(null);
+      handleSuccess();
+    } catch (error) {
+      const isAuthError = error instanceof Error && error.message === 'AUTH_REQUIRED';
+      setPaymentError(isAuthError ? 'Войди в аккаунт, чтобы активировать подписку.' : 'Не удалось активировать подписку.');
+    } finally {
+      setIsProcessingPayment(false);
+    }
+  };
 
   const handleSuccess = () => {
     setShowSuccess(true);
@@ -41,13 +70,15 @@ function Paymentpage() {
       {/* хедер, который импортировали  */}
       <Header />
       {/* Мейн, в который передается информация о том какой план выбран, включена ли годовая оплата и функция для переключения между месячной и годовой оплатой */}
-      <Main onUpgrade={handleUpgrade} isYearly={isYearly} onToggleYearly={setIsYearly} />
+      <Main plans={plans} onUpgrade={handleUpgrade} isYearly={isYearly} onToggleYearly={setIsYearly} />
       {/* окошечко с оплатой, в который передается информация о выбранном плане, включена ли годовая оплата, функция для закрытия окна и функция для отображения успеха оплаты */}
       <Payment
         selectedPlan={selectedPlan}
         isYearly={isYearly}
+        isProcessing={isProcessingPayment}
+        errorMessage={paymentError}
         onClose={() => setSelectedPlan(null)}
-        onSuccess={handleSuccess}
+        onPay={handlePayment}
       />
       {/* окошечко с успехом оплаты*/}
       <Success showSuccess={showSuccess} />

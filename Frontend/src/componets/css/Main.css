@@ -607,9 +607,31 @@
   font-size: 14px;
 }
 
+.main-login-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
 .main-login-subtitle {
   color: #eab308;
   font-size: 0.875rem;
   padding: 16px 0;
   display: flex;
+}
+
+.main-login-message {
+  color: #eab308;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.main-login-link {
+  color: #9ca3af;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.main-login-link:hover {
+  color: #eab308;
 }

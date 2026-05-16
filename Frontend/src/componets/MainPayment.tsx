@@ -1,4 +1,4 @@
-import { plans, type Plan } from '../data/Plan';
+import { type Plan } from '../data/Plan';
 import { Star, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import './css/Main.css';
@@ -7,9 +7,10 @@ type MainProps = {
   onUpgrade: (plan: Plan) => void;
   isYearly: boolean;
   onToggleYearly: (value: boolean) => void;
+  plans: Plan[];
 };
 
-function Main({ onUpgrade, isYearly, onToggleYearly }: MainProps) {
+function Main({ onUpgrade, isYearly, onToggleYearly, plans }: MainProps) {
   return (
     <main className="main">
       <div className="main-heading">
@@ -45,7 +46,7 @@ function Main({ onUpgrade, isYearly, onToggleYearly }: MainProps) {
 
           return (
             <motion.div
-              key={index}
+              key={plan.id}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
