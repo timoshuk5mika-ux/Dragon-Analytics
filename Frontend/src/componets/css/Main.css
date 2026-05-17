@@ -389,6 +389,10 @@
   color: #e05050;
 }
 
+.info-stat-orange {
+  color: #db5700;
+}
+
 .main-table {
   display: block;
   font-size: 18px;
@@ -422,14 +426,6 @@
 
 .first, .second, .third, .main-table-player-alliance{
   color: #eab308;
-}
-
-.main-table-player-kills {
-  color: #db5700;
-}
-
-.main-table-player-deaths {
-  color: #cd3a3a;
 }
 
 .main-table-player-name {
@@ -743,5 +739,9 @@
 .main-title-panels {
   display: flex;
   gap: 25px;
+  margin-bottom: 16px;
 }
 
+.main-card-margin-zero {
+  margin: 0;
+}

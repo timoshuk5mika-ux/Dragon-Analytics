@@ -3,7 +3,10 @@ import './css/Main.css';
 import { defaultLoginData } from '../data/userData';
 
 
+
+
 function Main() {
+
     return (<main className='main'>
         <div className='mein-heading'>
             <p className='main-subtitle'>C ВОЗРАЩЕНИЕМ</p>
@@ -16,19 +19,34 @@ function Main() {
         </div>
         <div className='main-grid'>
             <div className='main-card main-card-dark'>
-                <h3 className='main-panels-graph-card-title'>СИЛА</h3>
-                <p className='main-panels-graph-card-info'>{((defaultLoginData.power ?? 0) / 1_000_000_000).toFixed(2)}В</p>
+                <div className='main-card-header main-card-margin-zero'>
+                    <h3 className='main-plan-name info-stat-yellow'>{((defaultLoginData.power ?? 0) / 1_000_000_000).toFixed(2)}В</h3>
+                    <p className='main-plan-title main-plan-title-dark '>СИЛА</p>
+                </div>
             </div>
             <div className='main-card main-card-dark'>
-                <h3 className='main-panels-graph-card-title'>УБИЙСТВА</h3>
-                <p className='main-panels-graph-card-info'>{defaultLoginData.kills}</p>
+                <div className='main-card-header main-card-margin-zero'>
+                    <h3 className='main-plan-name info-stat-orange'>{((defaultLoginData.power ?? 0) / 1_000_000_000).toFixed(2)}В</h3>
+                    <p className='main-plan-title main-plan-title-dark '>УБИЙСТВА</p>
+                </div>
+            </div>
+            <div className='main-card main-card-dark '>
+                <div className='main-card-header main-card-margin-zero'>
+                    <h3 className='main-plan-name info-stat-red'>{((defaultLoginData.power ?? 0) / 1_000_000_000).toFixed(2)}В</h3>
+                    <p className='main-plan-title main-plan-title-dark'>СМЕРТИ</p>
+                </div>
             </div>
             <div className='main-card main-card-dark'>
-                <h3 className='main-panels-graph-card-title'>СМЕРТИ</h3>
-                <p className='main-panels-graph-card-info'>{defaultLoginData.deaths}</p>
+                <div className='main-card-header main-card-margin-zero'>
+                    <h3 className='main-plan-name info-stat-yellow'>{((defaultLoginData.power ?? 0) / 1_000_000_000).toFixed(2)}В</h3>
+                    <p className='main-plan-title main-plan-title-dark'>K/D</p>
+                </div>
             </div>
         </div>
-        <div className='main-panels-graph'>
+        <div className='main-profile-wrap'>
+            <div className=''>
+
+            </div>
         </div>
     </main>
     )

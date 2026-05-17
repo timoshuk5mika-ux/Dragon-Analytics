@@ -11,6 +11,7 @@ export interface LoginData {
   power?: number;
   kills?: number;
   deaths?: number;
+  kd?: number;
 }
 
 const currentPlayer = LEADERBOARD.find(p => p.player_id === 'p1')!;
@@ -26,4 +27,5 @@ export const defaultLoginData: LoginData = {
   power: currentPlayer.power,
   kills: currentPlayer.kills,
   deaths: currentPlayer.deaths,
+  kd: currentPlayer.kills / (currentPlayer.deaths || 1),
 };

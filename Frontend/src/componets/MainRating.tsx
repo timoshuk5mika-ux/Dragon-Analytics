@@ -41,10 +41,10 @@ function Main () {
                     'main-table-player-rank'
                     }>#{player.rank}</td>
                     <td className='main-table-player-name'>{player.ign}</td>
-                    <td className='main-table-player-alliance'>[{player.alliance}]</td>
+                    <td className='info-stat-yellow'>[{player.alliance}]</td>
                     <td className='main-table-player-power'>{(player.power / 1_000_000).toFixed(2)}M</td>
-                    <td className='main-table-player-kills'>{(player.kills / 1_000_000).toFixed(2)}M</td>
-                    <td className='main-table-player-deaths'>{(player.deaths / 1_000_000).toFixed(2)}M</td>
+                    <td className='info-stat-orange'>{(player.kills / 1_000_000).toFixed(2)}M</td>
+                    <td className='info-stat-red'>{(player.deaths / 1_000_000).toFixed(2)}M</td>
                 </Motion.tr>
             ))}
             </tbody>
