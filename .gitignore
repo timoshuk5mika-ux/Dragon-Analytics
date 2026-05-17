@@ -1,0 +1,11 @@
+.idea/
+.pytest_cache/
+.venv/
+node_modules/
+
+# Root build artifacts generated during local frontend builds.
+dist/assets/index-*.js
+dist/assets/index-*.css
+
+__pycache__/
+*.py[cod]
