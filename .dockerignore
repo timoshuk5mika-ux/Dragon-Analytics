@@ -1,0 +1,13 @@
+.git/
+.idea/
+.pytest_cache/
+.venv/
+.vite/
+node_modules/
+Frontend/node_modules/
+Frontend/dist/
+dist/assets/index-*.js
+dist/assets/index-*.css
+
+**/__pycache__/
+*.py[cod]

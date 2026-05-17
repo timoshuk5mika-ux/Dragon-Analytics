@@ -2,8 +2,8 @@ services:
   - type: web
     name: dragon-analytics-backend
     runtime: docker
-    dockerContext: ./Backend
-    dockerfilePath: ./Backend/Dockerfile
+    dockerContext: .
+    dockerfilePath: ./Dockerfile
     plan: free
     healthCheckPath: /api/v1/health
     envVars:
