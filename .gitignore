@@ -1,6 +1,7 @@
 .idea/
 .pytest_cache/
 .venv/
+.vite/
 node_modules/
 
 # Root build artifacts generated during local frontend builds.
