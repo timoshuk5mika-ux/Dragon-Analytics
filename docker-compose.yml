@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: dragon_analytics_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: dragon_analytics
+      POSTGRES_USER: dragon_user
+      POSTGRES_PASSWORD: dragon_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dragon_user -d dragon_analytics"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./Backend
+    container_name: dragon_analytics_backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      APP_NAME: Dragon Analytics API
+      DEBUG: "True"
+      API_V1_PREFIX: /api/v1
+      POSTGRES_DB: dragon_analytics
+      POSTGRES_USER: dragon_user
+      POSTGRES_PASSWORD: dragon_password
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      DATABASE_URL: postgresql+psycopg2://dragon_user:dragon_password@postgres:5432/dragon_analytics
+      JWT_SECRET_KEY: change-me-in-production
+      JWT_ALGORITHM: HS256
+      JWT_ACCESS_TOKEN_EXPIRE_MINUTES: "60"
+      CORS_ALLOWED_ORIGINS: http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000,http://127.0.0.1:3000
+    ports:
+      - "8000:8000"
+
+volumes:
+  postgres_data:
