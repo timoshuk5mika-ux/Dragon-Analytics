@@ -745,3 +745,7 @@
 .main-card-margin-zero {
   margin: 0;
 }
+
+.main-title-card-margin {
+  margin-bottom: 16px;
+}

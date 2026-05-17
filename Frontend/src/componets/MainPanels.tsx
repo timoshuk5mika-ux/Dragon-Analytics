@@ -1,7 +1,7 @@
 
 import './css/Main.css';
 import { defaultLoginData } from '../data/userData';
-
+import { Zap, Sword, Skull, Trophy } from 'lucide-react';
 
 
 
@@ -20,26 +20,38 @@ function Main() {
         <div className='main-grid'>
             <div className='main-card main-card-dark'>
                 <div className='main-card-header main-card-margin-zero'>
+                    <div className='main-hero-header main-title-card-margin'>
+                        <p className='main-plan-title main-plan-title-dark '>СИЛА</p>
+                        <Zap className='info-stat-yellow'/>
+                    </div>
                     <h3 className='main-plan-name info-stat-yellow'>{((defaultLoginData.power ?? 0) / 1_000_000_000).toFixed(2)}В</h3>
-                    <p className='main-plan-title main-plan-title-dark '>СИЛА</p>
                 </div>
             </div>
             <div className='main-card main-card-dark'>
                 <div className='main-card-header main-card-margin-zero'>
+                    <div className='main-hero-header main-title-card-margin'>
+                        <p className='main-plan-title main-plan-title-dark '>УБИЙСТВА</p>
+                        <Sword className='info-stat-orange' />
+                    </div>
                     <h3 className='main-plan-name info-stat-orange'>{((defaultLoginData.power ?? 0) / 1_000_000_000).toFixed(2)}В</h3>
-                    <p className='main-plan-title main-plan-title-dark '>УБИЙСТВА</p>
                 </div>
             </div>
             <div className='main-card main-card-dark '>
                 <div className='main-card-header main-card-margin-zero'>
+                    <div className='main-hero-header main-title-card-margin'>
+                        <p className='main-plan-title main-plan-title-dark'>СМЕРТИ</p>
+                        <Skull className='info-stat-red' />
+                    </div>
                     <h3 className='main-plan-name info-stat-red'>{((defaultLoginData.power ?? 0) / 1_000_000_000).toFixed(2)}В</h3>
-                    <p className='main-plan-title main-plan-title-dark'>СМЕРТИ</p>
                 </div>
             </div>
             <div className='main-card main-card-dark'>
                 <div className='main-card-header main-card-margin-zero'>
+                    <div className='main-hero-header main-title-card-margin'>
+                        <p className='main-plan-title main-plan-title-dark'>K/D</p>
+                        <Trophy className='info-stat-yellow' />
+                    </div>
                     <h3 className='main-plan-name info-stat-yellow'>{((defaultLoginData.power ?? 0) / 1_000_000_000).toFixed(2)}В</h3>
-                    <p className='main-plan-title main-plan-title-dark'>K/D</p>
                 </div>
             </div>
         </div>
