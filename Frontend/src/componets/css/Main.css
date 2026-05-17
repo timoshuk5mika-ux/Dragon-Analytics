@@ -115,10 +115,6 @@
   box-sizing: border-box;
 }
 
-.main-card:hover {
-  transform: translateY(-8px) !important;
-}
-
 .main-card-dark {
   border-color: rgba(255, 255, 255, 0.1);
 }
@@ -167,7 +163,6 @@
 .main-plan-title {
   font-size: 0.875rem;
   margin-top: 8px;
-  min-height: 48px;
 }
 
 .main-plan-title-dark {
@@ -486,6 +481,13 @@
 .main-hero-card:hover {
     border-color: #facc15;
     cursor: pointer;
+    transform: translateY(-8px) !important;
+}
+
+.main-plan-card:hover {
+    border-color: #facc15;
+    cursor: pointer;
+    transform: translateY(-8px) !important;
 }
 
 .main-card-image {
@@ -660,4 +662,76 @@
 
 .main-login-link:hover {
   color: #eab308;
+}
+
+.main-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 16px;
+  color: #eab308;
+}
+
+.main-profile-info {
+  display: flex;
+  gap: 8px;
+}
+
+.main-profile-card {
+  padding: 20px 24px;
+  width: 100%;
+}
+
+.main-profile-wrap {
+  display: flex;
+  gap: 24px;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main-profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-left: 24px;
+}
+
+.main-avatar-warp {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.main-avatar-button {
+  position: absolute;
+  bottom: +8px;
+  left: +100px;
+  padding: 8px;
+  border-radius: 16px;
+  background: #eab308;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  transition: background 0.2s;
+}
+
+.main-profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.main-profile-grid {
+  display: grid;
+  gap: 24px;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr); /* вместо repeat(2, 280px) */
+}
+
+.main-profile-card-size {
+  width: 100%;
 }

@@ -7,9 +7,10 @@ import Alliancespage from './pages/alliance-page';
 import Heropage from './pages/hero-page';
 import Regpage from './pages/reg-page';
 import Loginpage from './pages/login-page';
-
+import ProfilePage from './pages/progile-page';
 
 import './componets/css/App.css';
+
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/heroes" element={<Heropage />} />
         <Route path="/login" element={<Loginpage />} />
         <Route path="/register" element={<Regpage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </>
   )

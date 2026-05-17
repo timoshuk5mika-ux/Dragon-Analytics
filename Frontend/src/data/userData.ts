@@ -1,9 +1,13 @@
 export interface LoginData {
-  username: string;
+  email: string;
   password: string;
+  name?: string;
+  tier: 'RECRUIT' | 'KNIGHT' | 'DRAGONLORD' | 'MYTHIC';
 }
 
 export const defaultLoginData: LoginData = {
-  username: 'user',
-  password: 'pass'
+  email: 'user@example.com',
+  password: 'password123',
+  name: 'John Doe',
+  tier: 'RECRUIT',
 };

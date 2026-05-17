@@ -50,7 +50,7 @@ function Main({ onUpgrade, isYearly, onToggleYearly, plans }: MainProps) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className={`main-card main-card-dark ${plan.popular ? 'main-card-popular' : ''}`}
+              className={`main-card main-plan-card main-card-dark ${plan.popular ? 'main-card-popular' : ''}`}
             >
               {plan.popular && (
                 <div className="main-popular-badge">
