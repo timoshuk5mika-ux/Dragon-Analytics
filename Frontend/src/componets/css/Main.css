@@ -735,3 +735,13 @@
 .main-profile-card-size {
   width: 100%;
 }
+
+.info-stat-white {
+  color: #fff;
+}
+
+.main-title-panels {
+  display: flex;
+  gap: 25px;
+}
+

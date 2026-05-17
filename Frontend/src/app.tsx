@@ -8,6 +8,7 @@ import Heropage from './pages/hero-page';
 import Regpage from './pages/reg-page';
 import Loginpage from './pages/login-page';
 import ProfilePage from './pages/progile-page';
+import PanelsPage from './pages/panels-page';
 
 import './componets/css/App.css';
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/login" element={<Loginpage />} />
         <Route path="/register" element={<Regpage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/panels" element={<PanelsPage />} />
       </Routes>
     </>
   )
