@@ -1,0 +1,14 @@
+.payment-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 50; padding: 16px; }
+.payment-modal { background: #18181b; border-radius: 24px; width: 100%; max-width: 448px; padding: 32px; position: relative; }
+.payment-close { position: absolute; top: 16px; right: 16px; background: transparent; border: none; cursor: pointer; color: #9ca3af; transition: color 0.2s; }
+.payment-close:hover { color: white; }
+.payment-title { font-size: 1.875rem; font-weight: 700; margin-bottom: 8px; color: white; }
+.payment-price { color: #9ca3af; margin-bottom: 32px; }
+.payment-fields { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+.payment-input { width: 100%; background: #27272a; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 16px 20px; color: white; font-size: 1rem; box-sizing: border-box; }
+.payment-input::placeholder { color: #71717a; }
+.payment-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.payment-btn { width: 100%; background: #eab308; color: #000; font-weight: 700; font-size: 1.125rem; padding: 16px; border-radius: 16px; border: none; cursor: pointer; transition: background 0.2s; }
+.payment-btn:hover { background: #facc15; }
+.payment-btn:disabled { cursor: not-allowed; opacity: 0.65; }
+.payment-error { color: #f87171; font-size: 14px; line-height: 1.5; margin: -12px 0 16px; }
